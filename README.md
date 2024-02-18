@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+# Pokemon Fetcher App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React application that fetches data from the PokeAPI to display information about a random Pokemon.
 
-Currently, two official plugins are available:
+It includes a loading spinner and a timeout feature to simulate slow network requests.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+There was implemented AbortController to cancel the fetch request if user spam the button before receiving data.
 
-## Expanding the ESLint configuration
+Also there is two variants of style based of system color scheme (light and dark).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Structure
 
-- Configure the top-level `parserOptions` property like this:
+Main component that was described in assignment is `src/App.tsx`. It contains all the logic and state of the application.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+I have applied also following structure to the project to make it a bit more organized:
+
+- `components` folder contains components - for now only `Spinner` component that is being used to display loading spinner inside button.
+
+
+- `helpers` folder contains helper functions - there is only one function that generates random number between (0, x).
+
+
+- `types` folder contains typescript types - there is only one type for Pokemon object.
+## Installation
+
+To run this project, you need to have Node.js(20.11.1 LTS) installed. Then, you can clone the repository and run the following commands:
+
+to install the dependencies:
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+to start the application locally:
+```bash
+npm run dev
+```
+

@@ -1,0 +1,11 @@
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    border: 1px solid white;
+    border-top: 2px solid var(--color-font);
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite, slide 1s;
+}
